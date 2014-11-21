@@ -1,0 +1,49 @@
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<style type="text/css">
+		ul{
+			padding:0px;
+			margin:0px;
+		}
+		li{
+			display: inline-block;
+			list-style-type:none;
+			height:25px; width:25px;
+			border: 1px solid  black;
+			margin: 1px 1px;
+		}
+
+	</style>
+</head>
+<title>
+jquery-project
+</title>
+<body>
+
+<button onclick= "res();" style="margin: 10px 0px; padding: 10px;">
+Enter the grid
+</button>
+<div id="container">
+
+</div>
+</body>
+<script>
+function res(){
+	 $('li').css('background-color','white');
+  	 $('#container').remove()
+  	 $('body').append('<div id="container"></div>');
+	var width=prompt("Enter Width (Max:40)");
+	var height=prompt("Enter height (Max:40)");
+	for(var i=0;i<height;i++){
+		$("#container").append("<ul></ul>");
+	}
+	for(var i=0;i<width;i++){
+		$("ul").append("<li></li>");
+	}
+	$("li").hover(function(){
+		$(this).css("background-color","blue");
+	});
+}
+</script>
+</html>
